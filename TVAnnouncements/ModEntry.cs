@@ -40,9 +40,9 @@ namespace TVAnnouncements
                 if (Config.ShowDailyLuckNumber)
                 {
                     if (Game1.dailyLuck > 0)
-                        fortune += " (+" + Game1.dailyLuck + ")";
+                        fortune += " (+" + Game1.dailyLuck.ToString("P", CultureInfo.InvariantCulture) + ")";
                     else
-                        fortune += " (" + Game1.dailyLuck + ")";
+                        fortune += " (" + Game1.dailyLuck.ToString("P", CultureInfo.InvariantCulture) + ")";
                 }
 
                 HUDMessage fortuneMessage = new HUDMessage(fortune, new Color(), Config.NotificationDuration, true);    //the Color variable does nothing
