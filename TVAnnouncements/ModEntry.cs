@@ -5,6 +5,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Objects;
+using System.Globalization;
 
 namespace TVAnnouncements
 {
@@ -106,9 +107,9 @@ namespace TVAnnouncements
                 if (Config.ShowDailyLuckNumber)
                 {
                    if (Game1.player.DailyLuck > 0)
-                        fortune += " (+" + Game1.player.DailyLuck + ")";
+                        fortune += " (+" + Game1.player.DailyLuck.ToString("P", CultureInfo.InvariantCulture) + ")";
                     else
-                        fortune += " (" + Game1.player.DailyLuck + ")";
+                        fortune += " (" + Game1.player.DailyLuck.ToString("P", CultureInfo.InvariantCulture) + ")";
                 }
 
                 HUDMessage fortuneMessage = new HUDMessage(fortune, new Color(), Config.NotificationDuration, true);    //the Color variable does nothing
